@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Wedding theme - Peach & Coral romance */
+    --background: 15 30% 96%;
+    --foreground: 345 20% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 345 20% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 345 20% 25%;
+
+    --primary: 350 85% 68%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 15 100% 92%;
+    --secondary-foreground: 345 20% 25%;
+
+    --muted: 15 20% 90%;
+    --muted-foreground: 345 15% 45%;
+
+    --accent: 10 90% 75%;
+    --accent-foreground: 345 20% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 15 20% 88%;
+    --input: 15 20% 92%;
+    --ring: 350 85% 68%;
+
+    --radius: 1rem;
+
+    /* Wedding-specific colors */
+    --wedding-rose: 350 85% 68%;
+    --wedding-peach: 15 100% 85%;
+    --wedding-coral: 10 90% 75%;
+    --wedding-text: 345 20% 25%;
+    --wedding-text-muted: 345 15% 55%;
+  }
+
+  .dark {
+    --background: 345 25% 12%;
+    --foreground: 15 20% 95%;
+
+    --card: 345 20% 15%;
+    --card-foreground: 15 20% 95%;
+
+    --popover: 345 20% 15%;
+    --popover-foreground: 15 20% 95%;
+
+    --primary: 350 85% 68%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 345 20% 20%;
+    --secondary-foreground: 15 20% 95%;
+
+    --muted: 345 20% 18%;
+    --muted-foreground: 15 15% 70%;
+
+    --accent: 10 90% 75%;
+    --accent-foreground: 345 20% 95%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 15 20% 95%;
+
+    --border: 345 20% 20%;
+    --input: 345 20% 20%;
+    --ring: 350 85% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .wedding-title {
+    @apply text-6xl md:text-8xl font-bold;
+    color: hsl(var(--wedding-rose));
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .wedding-subtitle {
+    @apply text-lg md:text-xl;
+    color: hsl(var(--wedding-text-muted));
+  }
+
+  .countdown-card {
+    @apply bg-card rounded-2xl shadow-lg p-6 border border-border;
+  }
+
+  .section-card {
+    @apply bg-card rounded-3xl shadow-xl p-8 md:p-12 border border-border;
+  }
+}
