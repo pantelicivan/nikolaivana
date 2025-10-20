@@ -124,6 +124,25 @@ export type Database = {
           }
         ];
       };
+
+      photos: {
+        Row: {
+          id: string;
+          url: string;
+          created_at: string | null;
+        };
+        Insert: {
+          id?: string;
+          url: string;
+          created_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          url?: string;
+          created_at?: string | null;
+        };
+        Relationships: [];
+      };
     };
 
     Views: {
